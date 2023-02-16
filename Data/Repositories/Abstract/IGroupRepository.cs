@@ -6,6 +6,7 @@ namespace Data.Repositories.Abstract
 	{
 		List<Group> GetAll();
 		Group Get(int id);
+		Group GetByName(string name);
 		void Add(Group group );
 		void Update(Group group);   // bunlar writedi / read olanlari yuxarida yaziriq
 		void Delete(Group group);   
