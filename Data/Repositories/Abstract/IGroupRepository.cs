@@ -2,17 +2,12 @@
 using Core.Entities;
 namespace Data.Repositories.Abstract
 {
-	public interface IGroupRepository
+	public interface IGroupRepository:IRepository<Group>
 	{
-		List<Group> GetAll();
-		Group Get(int id);
-		Group GetByName(string name);
-		void Add(Group group );
-		void Update(Group group);   // bunlar writedi / read olanlari yuxarida yaziriq
-		void Delete(Group group);   
+        Group  GetByName(string name);
+        List<Group> GetGroupsByStudentCount(int studentCount);
 
-		// abstract metodlari ozunde saxladi
-		//implement etmek ucun concrete bax
+        // ancaq studente aid spesifik metodlari burda saxlayacam
     }
 }
 

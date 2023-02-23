@@ -22,6 +22,11 @@ namespace Data.Repositories.Concrete
             return DbContext.Groups.FirstOrDefault(g => g.Name.ToLower() == name.ToLower()); 
         }
 
+        public List<Group> GetGroupsByStudentCount(int studentCount)
+        {
+            return DbContext.Groups.Where(g => g.Students.Count >= studentCount).ToList();
+        }
+
         public void Add(Group group)
         {
             id++;
@@ -48,9 +53,8 @@ namespace Data.Repositories.Concrete
         {
             DbContext.Groups.Remove(group);
         }
+
        
-
-
     }
 }
 
